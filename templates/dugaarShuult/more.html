@@ -1,0 +1,294 @@
+<!-- templates/base.html -->
+<!DOCTYPE html>
+<html class="boxed sticky-header-reveal">
+{% load static %}
+<head>
+    {#    {% block head %}#}
+    <!-- Basic -->
+    <meta http-equiv="refresh" content="600;url=/?user_id={{ user_id }}">
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+    <title>Цахим шаардах хуудас</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{% static "shaardah_huudas/img/logo.png" %}" type="image/x-icon"/>
+    <link rel="apple-touch-icon" href="{% static "shaardah_huudas/img/logo.png" %}"/>
+
+    <!-- Mobile Metas -->
+    <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no"
+    />
+
+    <!-- Vendor CSS -->
+    <link rel="stylesheet" href="{% static "shaardah_huudas/vendor/bootstrap/css/bootstrap.min.css" %}"/>
+
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="{% static "shaardah_huudas/css/theme.css" %}"/>
+    <link rel="stylesheet" href="{% static "shaardah_huudas/css/table.css" %}"/>
+
+    <!-- Demo CSS -->
+    <link rel="stylesheet" href="{% static "shaardah_huudas/css/main.css" %}"/>
+    <!-- Skin CSS -->
+    <link rel="stylesheet" href="{% static "shaardah_huudas/css/skins/skin.css" %}"/>
+    <!-- Head Libs -->
+    <!--script src="{% static "shaardah_huudas/vendor/modernizr/modernizr.min.js" %}"></script-->
+    <link rel="stylesheet" type="text/css" href="{% static "css/style.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "css/font-awesome.css" %}">
+    {#    {% endblock %}#}
+</head>
+
+<body style="height: auto">
+<div class="body" style="margin-top: 0px;">
+    <header
+            id="header"
+            class="header-effect-reveal"
+            data-plugin-options="{'stickyEnabled': true, 'stickyEffect': 'reveal', 'stickyEnableOnBoxed': true, 'stickyEnableOnMobile': true, 'stickyChangeLogo': false, 'stickyStartAt': 220, 'stickySetTop': '-66px'}"
+    >
+        <div class="header-body border-top-0">
+            <div class="header-top header-top-simple-border-bottom">
+                <div class="container h-100">
+                    <div class="header-row h-100">
+                        <div class="header-column justify-content-start"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-container container scroll">
+                <div class="header-row">
+                    <div class="header-column">
+                        <div class="header-row">
+                            <div class="header-logo">
+                                <a href="#">
+                                    <img
+                                            alt="Porto"
+                                            width="192"
+                                            height="55"
+                                            src="{% static "shaardah_huudas/img/gmobile.png" %}"
+                                    />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header-column justify-content-end">
+                        <div class="header-row">
+                            <div class="header-nav">
+                                <div
+                                        class="header-nav-main header-nav-main-square header-nav-main-effect-1 header-nav-main-sub-effect-1"
+                                >
+                                    <nav class="collapse">
+                                        <ul class="nav nav-pills" id="mainNav">
+                                            <li>
+                                                <a class="nav-link"
+                                                   href="/niitDugaarShuult?user_id={{ user_id }}&page={{ page }}">
+                                                    Нийт хадгалагдсан дугаар
+                                                </a>
+                                            </li>
+{#                                            <li>#}
+{#                                                <a class="nav-link active" href="#">#}
+{#                                                    Хүлээгдэж байгаа шаардах#}
+{#                                                </a>#}
+{#                                            </li>#}
+                                            <li
+                                                    class="dropdown dropdown-full-color dropdown-primary dropdown-mega dropdown-mega-book-now"
+                                                    id="headerBookNow"
+                                            >
+                                                <a
+                                                        class="nav-link dropdown-toggle"
+                                                        href="#"
+                                                >
+                                                    Хэрэглэгч
+                                                </a>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <a class="dropdown-item" href="#">{{ employee.name }}</a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="dropdown-item"
+                                                           href="/?user_id={{ user_id }}">Гарах</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div role="main" class="main">
+        <div class="row">
+            <div class="col-lg-9">
+                <section
+                        class="section section-tertiary bg-quaternary border-0 m-0 appear-animation"
+                        data-appear-animation="fadeIn"
+                        id="ourservices"
+                >
+                    <div class="container scroll">
+{#                        <div class="row">#}
+{#                            <div class="col-md-2 text-center">#}
+{#                                <p>НХМаягт БМ - 6</p>#}
+{#                            </div>#}
+{#                            <div class="col-md-10 text-right">#}
+{#                                <p>Сангийн сайдын 2017 оны 12 дугаар сарын</p>#}
+{#                                <p>5-ны өдрийн 347 тоот тушаалын хавсралт</p>#}
+{#                            </div>#}
+{#                        </div>#}
+                        <div class="row">
+                            <div class="col text-center">
+                                <div class="overflow-hidden mb-4">
+                                    <h2
+                                            class="text-color-light font-weight-bold mt-4 mb-0 pb-0 text-uppercase"
+                                            data-appear-animation="maskUp"
+                                            data-appear-animation-delay="250"
+                                    >
+                                        Хадгалсан дугаарын № {{ nsn.id }}
+                                    </h2>
+                                    {{ doc }}
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-10 text-right">
+                                <p>{{ nsn.createddate }}</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p>Хэнээс {{ saved_name }}</p>
+                                <div class="text-center divider divider-primary divider-small">
+                                    <hr class="mt-2 mr-auto"/>
+                                    <p>(Овог нэр, албан тушаал)</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p>Зориулалт {{ nsn.zoriulalt }}</p>
+                                <div class="text-center divider divider-primary divider-small">
+                                    <hr class="mt-2 mr-auto"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 text-center">
+{#                                <form action="/simple/submit?user_id={{ user_id }}&position={{ position }}&package_id={{ packageData.packagecode }}"#}
+{#                                      method="post" enctype="multipart/form-data">{% csrf_token %}#}
+                                    <table class="table table-bordered responsive table-striped mb-0 text-light">
+                                        <tr>
+                                            <th>Д/Д</th>
+                                            <th>Хадгалах хоног</th>
+                                            <th>Дугаар</th>
+                                        </tr>
+{#                                        {% for data in nsn %}#}
+                                        <tr>
+                                            <td>{{ 1 }}</td>
+                                            <td>
+                                                {{ nsn.dia }}
+                                            </td>
+                                            <td>{{ nsn.numbers }}</td>
+                                        </tr>
+{#                                        {% endfor %}#}
+                                    </table>
+                                    <div class="macro-map clearfix">
+                                        <div class="macro-map-info">
+                                            <div class="macro-map-info-detail">
+                                                <!--{% if packageData.secondfirm == position %}-->
+                                                    <!--<input type="submit" value="Хүсэлт илгээх" class="Oval1" required>-->
+                                                    <!--{% endif %}-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--</form>-->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="macro-map clearfix">
+                        <div class="macro-map-info">
+                            {#                            <div class="macro-map-info-detail" style="width: 100%">#}
+                            {#                                <embed src="{% static "attachment/" %}{{ id_asset }}.pdf" width="100%" height="375"#}
+                            {#                                       type="application/pdf">#}
+                            {#                            </div>#}
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="col-lg-3">
+                <div class="macro-map clearfix">
+                    <div class="macro-map-info">
+                        <div class="macro-map-info-detail" style="width: 100%">
+                            {#                            {% block content %}#}
+                            <div class="row">
+                                <div class="col-md-8">
+
+                                    <p style="font-weight: bold; width: 600px">Хянасан:</p>
+                                    <br>
+                                    <p>Газрын захирал
+                                        <br>
+                                        {{ headName }}
+                                        {% if need_firm.firstfirm < "2" and tsohoh == "yes" %}
+                                            <img src="{% static "images/waiting.png" %}"></img>
+                                            <br>
+                                            <form action="/firmNumbers?user_id={{ user_id }}&nsn_id={{ nsn.id }}" method="post" enctype="multipart/form-data">{% csrf_token %}
+                                            <select name="firmado">
+                                                <option value="may">Хүлээгдэж байна</option>
+                                                <option value="yes">Зөвшөөрөх</option>
+                                                <option value="no">Цуцлах</option>
+                                            </select>
+                                            <div class="col-md-4">
+                                                <input type="text" name="tailbar" value=""
+                                                       placeholder="Тайлбар оруулах боломжтой" autocomplete="off">
+                                            </div>
+                                            <div class="col-md-4">
+                                                <input type="submit" value="Хүсэлт илгээх" class="Oval1">
+                                            </div>
+                                            </form>
+                                            <br>
+                                        {% elif need_firm.firstfirm == 2 %}
+                                            <img src="{% static "images/checked.png" %}"></img>
+                                            <br>
+                                            {{ need_firm.firstfirmdate }}
+                                            <br>
+                                            {{ need_firm.firstfirmdescription }}
+                                        {% elif need_firm.firstfirm == 3 %}
+                                            <img src="{% static "images/cancel.png" %}"></img>
+                                            <br>
+                                            {{ need_firm.firstfirmdate }}
+                                            <br>
+                                            {{ need_firm.firstfirmdescription }}
+                                        {% endif %}
+                                    </p>
+
+                                    <br>
+                                    <p>Хүсэлт илгээсэн
+                                        <br>
+                                        {{ saved_name }}
+                                    </p>
+
+                                </div>
+                            </div>
+                            {#                            {% endblock %}#}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer id="footer" class="color bg-primary mt-0 pt-5 pb-5">
+        <div class="container">
+
+        </div>
+    </footer>
+</div>
+<!-- Vendor -->
+<script src="{% static "shaardah_huudas/vendor/jquery/jquery.min.js" %}"></script>
+<script src="{% static "shaardah_huudas/vendor/bootstrap/js/bootstrap.min.js" %}"></script>
+
+</body>
+</html>

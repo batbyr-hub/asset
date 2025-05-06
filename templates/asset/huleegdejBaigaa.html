@@ -1,0 +1,494 @@
+<!-- templates/base.html -->
+<!DOCTYPE html>
+<html class="boxed sticky-header-reveal">
+{% load static %}
+<head>
+    {#    {% block head %}#}
+    <!-- Basic -->
+    <meta http-equiv="refresh" content="600;url=/?user_id={{ user_id }}">
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+    <title>Цахим шаардах хуудас</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{% static "shaardah_huudas/img/logo.png" %}" type="image/x-icon"/>
+    <link rel="apple-touch-icon" href="{% static "shaardah_huudas/img/logo.png" %}"/>
+
+    <!-- Mobile Metas -->
+    <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no"
+    />
+
+    <!-- Vendor CSS -->
+    <link rel="stylesheet" href="{% static "shaardah_huudas/vendor/bootstrap/css/bootstrap.min.css" %}"/>
+
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="{% static "shaardah_huudas/css/theme.css" %}"/>
+    <link rel="stylesheet" href="{% static "shaardah_huudas/css/table.css" %}"/>
+
+    <!-- Demo CSS -->
+    <link rel="stylesheet" href="{% static "shaardah_huudas/css/main.css" %}"/>
+    <!-- Skin CSS -->
+    <link rel="stylesheet" href="{% static "shaardah_huudas/css/skins/skin.css" %}"/>
+    <!-- Head Libs -->
+    <!--script src="{% static "shaardah_huudas/vendor/modernizr/modernizr.min.js" %}"></script-->
+    <link rel="stylesheet" type="text/css" href="{% static "css/style.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "css/font-awesome.css" %}">
+    {#    {% endblock %}#}
+</head>
+
+<body style="height: auto">
+<div class="body" style="margin-top: 0px;">
+    <header
+            id="header"
+            class="header-effect-reveal"
+            data-plugin-options="{'stickyEnabled': true, 'stickyEffect': 'reveal', 'stickyEnableOnBoxed': true, 'stickyEnableOnMobile': true, 'stickyChangeLogo': false, 'stickyStartAt': 220, 'stickySetTop': '-66px'}"
+    >
+        <div class="header-body border-top-0">
+            <div class="header-top header-top-simple-border-bottom">
+                <div class="container h-100">
+                    <div class="header-row h-100">
+                        <div class="header-column justify-content-start"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-container container scroll">
+                <div class="header-row">
+                    <div class="header-column">
+                        <div class="header-row">
+                            <div class="header-logo">
+                                <a href="#">
+                                    <img
+                                            alt="Porto"
+                                            width="192"
+                                            height="55"
+                                            src="{% static "shaardah_huudas/img/gmobile.png" %}"
+                                    />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header-column justify-content-end">
+                        <div class="header-row">
+                            <div class="header-nav">
+                                <div
+                                        class="header-nav-main header-nav-main-square header-nav-main-effect-1 header-nav-main-sub-effect-1"
+                                >
+                                    <nav class="collapse">
+                                        <ul class="nav nav-pills" id="mainNav">
+                                            <li>
+                                                <a class="nav-link"
+                                                   href="/asset/niitShaardah?user_id={{ user_id }}&tipo={{ tipo }}&page={{ page }}">
+                                                    Нийт ирсэн шаардах
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="nav-link active" href="#">
+                                                    Хүлээгдэж байгаа шаардах
+                                                </a>
+                                            </li>
+
+                                            <li>
+                                                <a class="nav-link" href="#">
+                                                    Батлагдсан шаардах
+                                                </a>
+                                            </li>
+                                            <li
+                                                    class="dropdown dropdown-full-color dropdown-primary dropdown-mega dropdown-mega-book-now"
+                                                    id="headerBookNow"
+                                            >
+                                                <a
+                                                        class="nav-link dropdown-toggle"
+                                                        href="#"
+                                                >
+                                                    Хэрэглэгч
+                                                </a>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <a class="dropdown-item" href="#">{{ user.username }}</a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="dropdown-item" href="/?user_id={{ user_id }}">Гарах</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div role="main" class="main">
+        <div class="row">
+            <div class="col-lg-9">
+                <section
+                        class="section section-tertiary bg-quaternary border-0 m-0 appear-animation"
+                        data-appear-animation="fadeIn"
+                        id="ourservices"
+                >
+                    <div class="container scroll">
+                        <div class="row">
+                            <div class="col text-center">
+                                <div class="overflow-hidden mb-4">
+                                    <h2
+                                            class="text-color-light font-weight-bold mt-4 mb-0 pb-0 text-uppercase"
+                                            data-appear-animation="maskUp"
+                                            data-appear-animation-delay="250"
+                                    >
+                                        төхөөрөмжийн шаардах хуудас № {{ packageData.assetslipid }}
+                                    </h2>
+                                    {{ doc }}
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-2 text-center">
+                                <h6>ЖИ МОБАЙЛ ХХК</h6>
+                                <div
+                                        style="margin-bottom: 0px"
+                                        class="divider divider-primary divider-small mb-4 mt-0"
+                                >
+                                    <hr class="mt-2 mr-auto"/>
+                                    <span class="text-color-light">(Байгууллагын нэр)</span>
+                                </div>
+                            </div>
+                            <div class="col-md-10 text-right">
+                                <p>{{ packageData.createddate }}</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p>Газар: {{ packageData.gazar }}</p>
+                                <div class="text-center divider divider-primary divider-small">
+                                    <hr class="mt-2 mr-auto"/>
+                                    <p>/Газар, Хэлтэс, Алба/</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p>Хэнээс: {{ packageData.userto }}</p>
+                                <div class="text-center divider divider-primary divider-small">
+                                    <hr class="mt-2 mr-auto"/>
+                                    <p>/Овог нэр, Албан тушаал/</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p>Хаанаас: {{ packageData.locationfrom }}</p>
+                                <div class="text-center divider divider-primary divider-small">
+                                    <hr class="mt-2 mr-auto"/>
+                                    <p>/Агуулахын байршил/</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p>Зориулалт: {{ packageData.reasonvalue }}</p>
+                                <div class="text-center divider divider-primary divider-small">
+                                    <hr class="mt-2 mr-auto"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 text-center">
+                                <table class="table table-bordered responsive table-striped mb-0 text-light">
+                                    <tr>
+                                        <th rowspan="2">Д/Д</th>
+                                        <th colspan="2">Төхөөрөмж</th>
+                                        <th rowspan="2">Шаардсан Bar Код</th>
+                                        <th rowspan="2">Гаргасан Bar Код</th>
+                                        <th rowspan="2">Хэмжих нэгж</th>
+                                        <th rowspan="2">Хүссэн</th>
+                                        <th rowspan="2">Олгосон</th>
+                                        <th colspan="3">Байршил</th>
+                                        <th rowspan="2">Сонголт</th>
+                                        <th rowspan="2">Буцаж ирэх</th>
+                                        <th rowspan="2">Кабелийн урт</th>
+                                    </tr>
+                                    <tr>
+                                        <th>Үндсэн</th>
+                                        <th>Дэд</th>
+                                        <th>Аймаг</th>
+                                        <th>Сум/баг</th>
+                                        <th>Сайтын нэр</th>
+                                    </tr>
+                                    {% for data in detailsData %}
+                                        <tr>
+                                            <td>{{ i }}</td>
+                                            <td>{{ data.assetgroupname }}</td>
+                                            <td>{{ data.assetname }}</td>
+                                            <td>{{ data.assetbarcode }}</td>
+                                            <td></td>
+                                            <td>Ширхэг</td>
+                                            <td>1</td>
+                                            <td></td>
+                                            <td>{{ aimag }}</td>
+                                            <td>{{ sum }}</td>
+                                            <td>{{ saitiinNer }}</td>
+                                            <td>{{ data.seleccion }}</td>
+                                            <td>
+                                                {% if data.returnis == "0" %}
+                                                    <img src="{% static "images/new_design_images/icons/icons8-unchecked-checkbox-20.png" %}"/>
+                                                {% else %}
+                                                    <img src="{% static "images/new_design_images/icons/icons8-checked-checkbox-20.png" %}"/>
+                                                {% endif %}
+                                            </td>
+
+                                            <td>{{ data.lenghtCable }}</td>
+                                        </tr>
+                                    {% endfor %}
+                                </table>
+                                <p style="margin-top: 10px">Анхааруулга: Баркодны байршил нь баримтанд бичигдсэнээс өөр
+                                    байршилд
+                                    хүргэгдсэн бол хүлээн авсан ажилтанаар
+                                    эсвэл хүлээн авсан туслан гүйцэтгэгч компаниар бүртгэлийн залруулгыг хийлгэнэ.
+                                    Залруулга
+                                    хийлгээгүй
+                                    тохиолдолд хариуцлагыг холбогдох албан тушаалтан, эсвэл туслан гүйцгэгч компани
+                                    хүлээнэ.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="macro-map clearfix">
+                        <div class="macro-map-info">
+                            <div class="macro-map-info-detail" style="width: 100%">
+                                <embed src="{% static "attachment/" %}{{ packageData.id }}.pdf" width="100%" height="375"
+                                       type="application/pdf">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="col-lg-3">
+                <div class="macro-map clearfix">
+                    <div class="macro-map-info">
+                        <div class="macro-map-info-detail" style="width: 100%">
+                            <div class="row">
+                                <div class="col-md-8">
+<!--                                    <p style="font-weight: bold; width: 600px">Хяналт:</p>-->
+<!--                                    <br>-->
+
+<!--                                        {% if assetFirm.status < "2" %}-->
+<!--                                            <img src="{% static "images/waiting.png" %}"></img>-->
+<!--                                            <br>-->
+<!--                                                <form action="/asset/submit?user_id={{ user_id }}&assetPackageDataId={{ packageData.id }}&tipo={{ tipo }}&page={{ page }}"-->
+<!--                                                      method="post"-->
+<!--                                                      enctype="multipart/form-data">{% csrf_token %}-->
+<!--                                                    <select name="tuluv" id="tuluv">-->
+<!--                                                        <option value="may">Хүлээгдэж байна</option>-->
+<!--                                                        <option value="yes">Зөвшөөрсөн</option>-->
+<!--                                                        <option value="no">Цуцлах</option>-->
+<!--                                                    </select>-->
+<!--                                                    <div class="col-md-4">-->
+<!--                                                        <input type="submit" value="Хүсэлт илгээх"-->
+<!--                                                               class="Oval1">-->
+<!--                                                    </div>-->
+<!--                                                </form>-->
+<!--                                            <br>-->
+<!--                                        {% elif assetFirm.status == "2" %}-->
+<!--                                            <img src="{% static "images/checked.png" %}"></img>-->
+<!--                                        {% elif assetFirm.status == "3" %}-->
+<!--                                            <img src="{% static "images/cancel.png" %}"></img>-->
+<!--                                        {% endif %}-->
+<!--                                    <br>-->
+
+
+                                    {% for asset_firm in assetFirm %}
+                                        {% if asset_firm.userid == "13" %}
+                                            <p style="font-weight: bold; width: 600px">Хянасан:</p>
+                                            <p>ТАГ ерөнхий инженер
+                                                <br>
+                                                Б.Гунгааням
+                                                {% if asset_firm.status < "2" and user.user_id == "99" %}
+                                                    <img src="{% static "images/waiting.png" %}"></img>
+                                                    <br>
+                                                        <form action="/asset/submit?user_id={{ user_id }}&assetPackageDataId={{ packageData.id }}&tipo={{ tipo }}&page={{ page }}"
+                                                              method="post"
+                                                              enctype="multipart/form-data">{% csrf_token %}
+                                                            <select name="tuluv" id="tuluv">
+                                                                <option value="may">Хүлээгдэж байна</option>
+                                                                <option value="yes">Зөвшөөрсөн</option>
+                                                                <option value="no">Цуцлах</option>
+                                                            </select>
+                                                            <div class="col-md-4">
+                                                                <input type="submit" value="Хүсэлт илгээх"
+                                                                       class="Oval1">
+                                                            </div>
+                                                        </form>
+                                                    <br>
+                                                {% elif asset_firm.status == "2" %}
+                                                    <img src="{% static "images/checked.png" %}"></img>
+                                                {% elif asset_firm.status == "3" %}
+                                                    <img src="{% static "images/cancel.png" %}"></img>
+                                                {% elif asset_firm.status == "0" %}
+                                                    <img src="{% static "images/waiting.png" %}"></img>
+                                                {% endif %}
+                                            </p>
+                                            <br>
+                                        {% endif %}
+
+                                        {% if asset_firm.userid == "9" %}
+                                            <p style="font-weight: bold; width: 600px">Хянасан:</p>
+                                            <p>ТАГ захирал
+                                                <br>
+                                                А.Энх-Амгалан
+                                                {% if asset_firm.status < "2" and user.user_id == "92" %}
+                                                    <img src="{% static "images/waiting.png" %}"></img>
+                                                    <br>
+                                                        <form action="/asset/submit?user_id={{ user_id }}&assetPackageDataId={{ packageData.id }}&tipo={{ tipo }}&page={{ page }}"
+                                                              method="post"
+                                                              enctype="multipart/form-data">{% csrf_token %}
+                                                            <select name="tuluv" id="tuluv">
+                                                                <option value="may">Хүлээгдэж байна</option>
+                                                                <option value="yes">Зөвшөөрсөн</option>
+                                                                <option value="no">Цуцлах</option>
+                                                            </select>
+                                                            <div class="col-md-4">
+                                                                <input type="submit" value="Хүсэлт илгээх"
+                                                                       class="Oval1">
+                                                            </div>
+                                                        </form>
+                                                    <br>
+                                                {% elif asset_firm.status == "2" %}
+                                                    <img src="{% static "images/checked.png" %}"></img>
+                                                {% elif asset_firm.status == "3" %}
+                                                    <img src="{% static "images/cancel.png" %}"></img>
+                                                {% elif asset_firm.status == "0" %}
+                                                    <img src="{% static "images/waiting.png" %}"></img>
+                                                {% endif %}
+                                            </p>
+                                            <br>
+                                        {% endif %}
+
+                                        {% if asset_firm.userid == "18" %}
+                                            <p style="font-weight: bold; width: 600px">Хянасан:</p>
+                                            <p>БХГ хэлтсийн дарга <!--Ахлах инженер-->
+                                                <br>
+                                                Д.Пүрэвжаргал <!--Н.Хүрэлтогоо-->
+                                                {% if asset_firm.status < "2" and user.user_id == "327" %}
+                                                    <img src="{% static "images/waiting.png" %}"></img>
+                                                    <br>
+                                                        <form action="/asset/submit?user_id={{ user_id }}&assetPackageDataId={{ packageData.id }}&tipo={{ tipo }}&page={{ page }}"
+                                                              method="post"
+                                                              enctype="multipart/form-data">{% csrf_token %}
+                                                            <select name="tuluv" id="tuluv">
+                                                                <option value="may">Хүлээгдэж байна</option>
+                                                                <option value="yes">Зөвшөөрсөн</option>
+                                                                <option value="no">Цуцлах</option>
+                                                            </select>
+                                                            <div class="col-md-4">
+                                                                <input type="submit" value="Хүсэлт илгээх"
+                                                                       class="Oval1">
+                                                            </div>
+                                                        </form>
+                                                    <br>
+                                                {% elif asset_firm.status == "2" %}
+                                                    <img src="{% static "images/checked.png" %}"></img>
+                                                {% elif asset_firm.status == "3" %}
+                                                    <img src="{% static "images/cancel.png" %}"></img>
+                                                {% elif asset_firm.status == "0" %}
+                                                    <img src="{% static "images/waiting.png" %}"></img>
+                                                {% endif %}
+                                            </p>
+                                            <br>
+                                        {% endif %}
+
+                                        {% if asset_firm.userid == "23" %}
+                                            <p style="font-weight: bold; width: 600px">Хянасан:</p>
+                                            <p>БХГ захирал
+                                                <br>
+                                                С.Мөнхгэрэл
+<!--                                                Р.Сумъяа-->
+                                                {% if asset_firm.status < "2" and user.user_id == "12" %}
+                                                    <img src="{% static "images/waiting.png" %}"></img>
+                                                    <br>
+                                                        <form action="/asset/submit?user_id={{ user_id }}&assetPackageDataId={{ packageData.id }}&tipo={{ tipo }}&page={{ page }}"
+                                                              method="post"
+                                                              enctype="multipart/form-data">{% csrf_token %}
+                                                            <select name="tuluv" id="tuluv">
+                                                                <option value="may">Хүлээгдэж байна</option>
+                                                                <option value="yes">Зөвшөөрсөн</option>
+                                                                <option value="no">Цуцлах</option>
+                                                            </select>
+                                                            <div class="col-md-4">
+                                                                <input type="submit" value="Хүсэлт илгээх"
+                                                                       class="Oval1">
+                                                            </div>
+                                                        </form>
+                                                    <br>
+                                                {% elif asset_firm.status == "2" %}
+                                                    <img src="{% static "images/checked.png" %}"></img>
+                                                {% elif asset_firm.status == "3" %}
+                                                    <img src="{% static "images/cancel.png" %}"></img>
+                                                {% elif asset_firm.status == "0" %}
+                                                    <img src="{% static "images/waiting.png" %}"></img>
+                                                {% endif %}
+                                            </p>
+                                            <br>
+                                        {% endif %}
+
+                                        {% if asset_firm.userid == "7" %}
+                                            <p style="font-weight: bold; width: 600px">Хянасан:</p>
+                                            <p>СЭЗГ захирал
+                                                <br>
+                                                А.Баярсайхан
+                                                {% if asset_firm.status < "2" and user.user_id == "289" %}
+                                                    <img src="{% static "images/waiting.png" %}"></img>
+                                                    <br>
+                                                        <form action="/asset/submit?user_id={{ user_id }}&assetPackageDataId={{ packageData.id }}&tipo={{ tipo }}&page={{ page }}"
+                                                              method="post"
+                                                              enctype="multipart/form-data">{% csrf_token %}
+                                                            <select name="tuluv" id="tuluv">
+                                                                <option value="may">Хүлээгдэж байна</option>
+                                                                <option value="yes">Зөвшөөрсөн</option>
+                                                                <option value="no">Цуцлах</option>
+                                                            </select>
+                                                            <div class="col-md-4">
+                                                                <input type="submit" value="Хүсэлт илгээх"
+                                                                       class="Oval1">
+                                                            </div>
+                                                        </form>
+                                                    <br>
+                                                {% elif asset_firm.status == "2" %}
+                                                    <img src="{% static "images/checked.png" %}"></img>
+                                                {% elif asset_firm.status == "3" %}
+                                                    <img src="{% static "images/cancel.png" %}"></img>
+                                                {% elif asset_firm.status == "0" %}
+                                                    <img src="{% static "images/waiting.png" %}"></img>
+                                                {% endif %}
+                                            </p>
+                                            <br>
+                                        {% endif %}
+                                    {% endfor %}
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer id="footer" class="color bg-primary mt-0 pt-5 pb-5">
+        <div class="container">
+
+        </div>
+    </footer>
+</div>
+<!-- Vendor -->
+<script src="{% static "shaardah_huudas/vendor/jquery/jquery.min.js" %}"></script>
+<script src="{% static "shaardah_huudas/vendor/bootstrap/js/bootstrap.min.js" %}"></script>
+
+</body>
+</html>

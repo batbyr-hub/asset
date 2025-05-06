@@ -1,0 +1,362 @@
+<html>
+{% load static %}
+<head>
+    <meta http-equiv="refresh" content="600;url=/nuur?user_id={{ user_id }}&tipo=">
+    <title>Дугаар шүүлт</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link href="{% static "css/bootstrap/bootstrap.css" %}" rel="stylesheet" type="text/css"/>
+    <link href="{% static "css/dugaarShuult/style.css" %}" rel="stylesheet" type="text/css"/>
+    <link href="{% static "css/dugaarShuult/fonts.css" %}" rel="stylesheet" type="text/css"/>
+    <script src="{% static "js/dugaarShuult/jquery1.min.js" %}"></script>
+    <script src="{% static "js/dugaarShuult/main.js" %}"></script>
+
+</head>
+<body>
+<div class="layer">
+    <div class="container">
+        <div class="ks_header">
+            <div class="row">
+                <div class="col-md-2">
+                    <img src="http://gmobile.mn/images/logo.svg" class="img-responsive" style="width: 200px"/>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="huree Oval1" style="width: 25%">
+            <a class="nuurTabText useg" href="/dugaarShuult?user_id={{ user_id }}" style="font-size: large;">< БУЦАХ</a>
+        </div>
+
+        <div class="huree">
+            <div class="row">
+                <input type="hidden" id="numbertype" value="{{ numbertype }}"/>
+                {% if az == "6" %}
+                    <input type="hidden" id="az" value="6"/>
+                {% endif %}
+                {% if az == "5" %}
+                    <input type="hidden" id="az" value="5"/>
+                {% endif %}
+                {% if az == "7" %}
+                    <input type="hidden" id="az" value="7"/>
+                {% endif %}
+                {% if az == "9" %}
+                    <input type="hidden" id="az" value="9"/>
+                {% endif %}
+                <div class="col-md-3 tabbb {% if az == "6" %}active{% endif %}"
+                     style="border-right: 1px solid #dddddd; border-left: 1px solid #dddddd">
+                    <a class="nuurTabText useg" href="/{{ prepost }}?user_id={{ user_id }}&numbertype={{ numbertype }}&az=6">Бүгд</a>
+                </div>
+                <div class="col-md-3 tabbb {% if az == "5" %}active{% endif %}" style="border-right: 1px solid #dddddd">
+                    <a class="nuurTabText useg" href="/{{ prepost }}?user_id={{ user_id }}&numbertype={{ numbertype }}&az=5">Алтан дугаар</a>
+                </div>
+                <div class="col-md-3 tabbb {% if az == "7" %}active{% endif %}" style="border-right: 1px solid #dddddd">
+                    <a class="nuurTabText useg" href="/{{ prepost }}?user_id={{ user_id }}&numbertype={{ numbertype }}&az=7">Мөнгөн дугаар</a>
+                </div>
+                <div class="col-md-3 tabbb {% if az == "9" %}active{% endif %}" style="border-right: 1px solid #dddddd">
+                    <a class="nuurTabText useg" href="/{{ prepost }}?user_id={{ user_id }}&numbertype={{ numbertype }}&az=9">Хүрэл дугаар</a>
+                </div>
+            </div>
+        </div>
+
+        {% if numbertype == "7" %}
+            <p class="useg" style="text-align: left; margin-bottom: 30px;">Дараа төлбөрт дугаар хайх</p>
+        {% endif %}
+        {% if numbertype == "2" %}
+            <p class="useg" style="text-align: left; margin-bottom: 30px;">Урьдчилсан төлбөрт дугаар хайх</p>
+        {% endif %}
+        {% if numbertype == "3" %}
+            <p class="useg" style="text-align: left; margin-bottom: 30px;">Жи-Интернет дугаар хайх</p>
+        {% endif %}
+        {% if numbertype == "4" %}
+            <p class="useg" style="text-align: left; margin-bottom: 30px;">Жи-Интернетфон дугаар хайх</p>
+        {% endif %}
+    </div>
+
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-5">
+
+                <select class="od useg" id="digit12" style="width: 96px;">
+                    {% if numbertype == "4" %}
+                        <option class="useg" value="78">78</option>
+                    {% elif numbertype == "7" %}
+                        <option class="useg" value="98">98</option>
+                        <option class="useg" value="97">97</option>
+                        <option class="useg" value="93">93</option>
+                        <option class="useg" value="83">83</option>
+                    {% else %}
+                        <option class="useg" value="98">98</option>
+                        <option class="useg" value="97">97</option>
+                        <option class="useg" value="93">93</option>
+                        <option class="useg" value="83">83</option>
+                    {% endif %}
+                </select>
+                {% if numbertype == "7" %}
+                    <select class="od useg" id="digit34" style="-webkit-appearance: none; width: 96px;">
+                        <option class="useg" value="**">**</option>
+                        <option class="useg" value="00">00</option>
+                        <option class="useg" value="01">01</option>
+                        <option class="useg" value="02">02</option>
+                        <option class="useg" value="03">03</option>
+                        <option class="useg" value="04">04</option>
+                        <option class="useg" value="05">05</option>
+                        <option class="useg" value="06">06</option>
+                        <option class="useg" value="07">07</option>
+                        <option class="useg" value="08">08</option>
+                        <option class="useg" value="09">09</option>
+                        <option class="useg" value="10">10</option>
+                        <option class="useg" value="11">11</option>
+						<option class="useg" value="12">12</option>
+						<option class="useg" value="13">13</option>
+                        <option class="useg" value="14">14</option>
+                        <option class="useg" value="15">15</option>
+                        <option class="useg" value="16">16</option>
+                        <option class="useg" value="17">17</option>
+                        <option class="useg" value="18">18</option>
+                        <option class="useg" value="19">19</option>
+                    </select>
+                    {% if az != "6" %}
+                        <select class="od useg" id="digit5678" style="-webkit-appearance: none; width: 192px;">
+                            <option style="text-align: center" value="****">****</option>
+                            {% if az == "5" %}
+                                <option style="text-align: center" value="AAAA">AAAA</option>
+                            {% elif az == "7" %}
+                                <option value="AABB">AABB</option>
+                                <option value="DEAB">DEAB</option>
+                                <option value="ABDE">ABDE</option>
+                            {% else %}
+                                <option value="ABBA">ABBA</option>
+                                <option value="ABAB">ABAB</option>
+                            {% endif %}
+                        </select>
+                    {% else %}
+                        <select class="od useg" id="digit5" style="-webkit-appearance: none;">
+                            <option value="*">*</option>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                        </select>
+                        <select class="od useg" id="digit6" style="-webkit-appearance: none;">
+                            <option value="*">*</option>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                        </select>
+                        <select class="od useg" id="digit7" style="-webkit-appearance: none;">
+                            <option value="*">*</option>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                        </select>
+                        <select class="od useg" id="digit8" style="-webkit-appearance: none;">
+                            <option value="*">*</option>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                        </select>
+                    {% endif %}
+                {% else %}
+                    <select class="od useg" id="digit3" style="-webkit-appearance: none;">
+                        <option value="*">*</option>
+                        {% if numbertype == "4" %}
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                        {% else %}
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                        {% endif %}
+                    </select>
+                    <select class="od useg" id="digit4" style="-webkit-appearance: none;">
+                        <option value="*">*</option>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                    </select>
+                    {% if az != "6" %}
+                        <select class="od useg" id="digit5678" style="-webkit-appearance: none; width: 192px;">
+                            <option value="****">****</option>
+                            {% if az == "5" %}
+                                <option value="AAAA">AAAA</option>
+                            {% elif az == "7" %}
+                                <option value="AABB">AABB</option>
+                                <option value="DEAB">DEAB</option>
+                                <option value="ABDE">ABDE</option>
+                            {% else %}
+                                <option value="ABBA">ABBA</option>
+                                <option value="ABAB">ABAB</option>
+                            {% endif %}
+                        </select>
+                    {% else %}
+                        <select class="od useg" id="digit5" style="-webkit-appearance: none;">
+                            <option value="*">*</option>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                        </select>
+                        <select class="od useg" id="digit6" style="-webkit-appearance: none;">
+                            <option value="*">*</option>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                        </select>
+                        <select class="od useg" id="digit7" style="-webkit-appearance: none;">
+                            <option value="*">*</option>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                        </select>
+                        <select class="od useg" id="digit8" style="-webkit-appearance: none;">
+                            <option value="*">*</option>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                        </select>
+                    {% endif %}
+                {% endif %}
+
+            </div>
+            <div class="col-lg-5" style="margin-left: -70px">
+                <a href="javascript: loadnumbers('{{ numbertype }}', '{{ az }}')">
+                    <p class="nuurTabText useg huree Oval1" style="width: 15%; height: 48px">ХАЙХ</p>
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 huree" style="margin-left: 15px">
+                <p class="useg" style="text-align: center; margin-top: 10px">Дугаарын эхлэл</p>
+                <div class="numbers" id="numbers">
+                    {% for prefix in prefixes %}
+                        <div class="container-fluid number_box Oval1 useg"
+                             onclick="javascript: prefixOronguud({{ prefix }}, {{ numbertype }})"
+                             style="cursor: pointer">{{ prefix }}
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="col-lg-7 huree" style="margin-left: 6%">
+                <p class="useg" style="text-align: center; margin-top: 10px">Шүүлтийн үр дүн</p>
+                <input type="hidden" id="available_move" value="1">
+                <input type="hidden" id="az" value="{{ az }}"/>
+                <input type="hidden" id="numbertype" value="{{ numbertype }}"/>
+                <input type="hidden" id="user_id" value="{{ user_id }}"/>
+                <div class="numbers useg" id="available_number">
+                    <!--p style="margin-top: 120px; margin-left: 240px">
+                        <img src="{% static 'images/new_design_images/icons/loader.png' %}">
+                    </p-->
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="container">
+        <div class="row" style="margin-bottom: 40px">
+            <div class="col-lg-4"></div>
+            <div class="col-lg-1" style="margin-left: 50px">
+                <img src="{% static "images/prev.png" %}" id="available_previous">
+            </div>
+            <div class="col-lg-1">
+                <img src="{% static "images/next.png" %}" id="available_next">
+            </div>
+        </div>
+    </div>
+
+    <div id="myModal" class="modal">
+
+    </div>
+
+</div>
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $(".row .close").click(modalCloseClick);
+    });
+
+    function modalCloseClick() {
+        var modalElement = $(this).parents(".modal").first();
+        modalElement.hide();
+        return false;
+    }
+
+</script>
+
+</body>
+</html>

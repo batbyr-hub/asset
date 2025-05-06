@@ -1,0 +1,246 @@
+<!-- templates/base.html -->
+<!DOCTYPE html>
+<html class="boxed sticky-header-reveal">
+{% load static %}
+<head>
+    <!-- Basic -->
+    <meta http-equiv="refresh" content="600;url=/?user_id={{ user_id }}">
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+    <title>Цахим шаардах хуудас</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{% static "shaardah_huudas/img/favicon.ico" %}" type="image/x-icon"/>
+    <link rel="apple-touch-icon" href="{% static "shaardah_huudas/img/gmobile-icon.png" %}"/>
+
+    <!-- Mobile Metas -->
+    <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no"
+    />
+
+    <!-- Vendor CSS -->
+    <link rel="stylesheet" href="{% static "shaardah_huudas/vendor/bootstrap/css/bootstrap.min.css" %}"/>
+
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="{% static "shaardah_huudas/css/theme.css" %}"/>
+    <link rel="stylesheet" href="{% static "shaardah_huudas/css/table.css" %}"/>
+
+    <!-- Demo CSS -->
+    <link rel="stylesheet" href="{% static "shaardah_huudas/css/main.css" %}"/>
+    <!-- Skin CSS -->
+    <link rel="stylesheet" href="{% static "shaardah_huudas/css/skins/skin.css" %}"/>
+    <!-- Head Libs -->
+    <!--script src="{% static "shaardah_huudas/vendor/modernizr/modernizr.min.js" %}"></script-->
+    <link rel="stylesheet" type="text/css" href="{% static "css/style.css" %}">
+</head>
+
+<body>
+<div class="body" style="margin-top: 0px">
+    <header
+            id="header"
+            class="header-effect-reveal"
+            data-plugin-options="{'stickyEnabled': true, 'stickyEffect': 'reveal', 'stickyEnableOnBoxed': true, 'stickyEnableOnMobile': true, 'stickyChangeLogo': false, 'stickyStartAt': 220, 'stickySetTop': '-66px'}"
+            style="top: 0px; margin-bottom: 0px"
+    >
+        <div class="header-body border-top-0">
+            <div class="header-top header-top-simple-border-bottom">
+                <div class="header-container container">
+                    <div class="header-row">
+                        <div class="header-column">
+                            <div class="header-row">
+                                <div class="header-logo">
+                                    <a href="#">
+                                        <img alt="Porto" width="192" height="55"
+                                             src="{% static "shaardah_huudas/img/gmobile.png" %}"/>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="header-column justify-content-end">
+                            <div class="header-row">
+                                <div class="header-nav">
+                                    <div class="header-nav-main header-nav-main-square header-nav-main-effect-1 header-nav-main-sub-effect-1">
+                                        <nav class="collapse">
+                                            <ul class="nav nav-pills" id="mainNav">
+                                                <li class="nav-link active">
+                                                    Энгийн шаардах
+                                                </li>
+                                                <li>
+                                                    <a class="nav-link" href="/nuur?user_id={{ user_id }}&tipo=2">
+                                                        <img src="{% static "images/home.png" %}">
+                                                    </a>
+                                                </li>
+                                                <li class="dropdown dropdown-full-color dropdown-primary dropdown-mega dropdown-mega-book-now"
+                                                    id="headerBookNow">
+                                                    <a class="nav-link dropdown-toggle" href="#">
+                                                        Хэрэглэгч
+                                                    </a>
+                                                    <ul class="dropdown-menu">
+                                                        <li>
+                                                            <a class="dropdown-item" href="#">{{ employee.name }}</a>
+                                                        </li>
+                                                        <li>
+                                                            <a class="dropdown-item"
+                                                               href="/?user_id={{ user_id }}">Гарах</a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-container container">
+                <div class="header-row">
+                    <div class="header-column justify-content-end">
+                        <div class="header-row">
+                            <div class="header-nav">
+                                <div
+                                        class="header-nav-main header-nav-main-square header-nav-main-effect-1 header-nav-main-sub-effect-1"
+                                >
+                                    <nav class="collapse">
+                                        <ul class="nav nav-pills" id="mainNav">
+                                            <li>
+                                                <a class="nav-link active" href="#">
+                                                    Нийт ирсэн шаардах
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <h3>
+                                                    {{ count }}
+                                                </h3>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div role="main" class="main scroll">
+        <section
+                class="section section-tertiary bg-quaternary border-0 m-0 appear-animation"
+                data-appear-animation="fadeIn"
+                id="ourservices"
+        >
+            <div class="container">
+                <div class="w3-container w3-teal scroll">
+                    <div id="viewData">
+                        <h1>Шаардах хуудасны цахим систем</h1>
+                        <table class="table table-bordered responsive table-striped mb-0 text-light">
+                            <tr>
+                                <th>Шаардах хуудас №</th>
+                                <th>Зориулалт</th>
+                                <th>Шаардах хуудас бичсэн</th>
+                                <th>Огноо</th>
+                                <th>Хариу</th>
+                                <th>Устгах боломжтой</th>
+                            </tr>
+                            {% for data in datas %}
+                                <tr>
+                                    <td class="Oval1">
+                                        {% if data.tuluv == "0" %}
+                                            <a style="font-weight: bold; color: white"
+                                               href="/simple/firm?user_id={{ user_id }}&package_id={{ data.packagecode }}&position={{ position }}&page={{ page_obj.number }}&owner={{ owner }}">{{ data.packagecode }}</a>
+                                        {% else %}
+                                            <a style="color: white"
+                                               href="/simple/firm?user_id={{ user_id }}&package_id={{ data.packagecode }}&position={{ position }}&page={{ page_obj.number }}&owner={{ owner }}">{{ data.packagecode }}</a>
+                                        {% endif %}
+                                    </td>
+                                    <td>{{ data.zoriulalt }}</td>
+                                    <td>{{ data.userto }}</td>
+                                    <td>{{ data.ognoo }}</td>
+                                    {% if data.tuluv == "0" %}
+                                        <td>Шинэ</td>
+                                    {% endif %}
+                                    {% if data.tuluv == "1" %}
+                                        <td>Хүлээгдэж байна</td>
+                                    {% endif %}
+                                    {% if data.tuluv == "2" %}
+                                        <td>Зөвшөөрсөн</td>
+                                    {% endif %}
+                                    {% if data.tuluv == "3" %}
+                                        <td>Татгалзсан</td>
+                                    {% endif %}
+                                    {% if owner == "my" and data.first0 == "0" %}
+                                        <td>
+                                            <button type="button"
+                                                    onclick="deleteShaardah({{ data.packagecode }}, {{ user_id }})">Устгах
+                                            </button>
+                                        </td>
+                                    {% endif %}
+                                </tr>
+                            {% endfor %}
+                        </table>
+                    </div>
+                </div>
+                <br>
+                <div class="pagination">
+                    <span class="step-links">
+                        {% if page_obj.has_previous %}
+                            <a href="?user_id={{ user_id }}&tipo={{ tipo }}&page=1&position={{ position }}&my={{ owner }}">&laquo; first</a>
+                            <a href="?user_id={{ user_id }}&tipo={{ tipo }}&page={{ page_obj.previous_page_number }}&position={{ position }}&my={{ owner }}">previous</a>
+                        {% endif %}
+                        <span class="current">
+                            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                        </span>
+                        {% if page_obj.has_next %}
+                            <a href="?user_id={{ user_id }}&tipo={{ tipo }}&page={{ page_obj.next_page_number }}&position={{ position }}&my={{ owner }}">next</a>
+                            <a href="?user_id={{ user_id }}&tipo={{ tipo }}&page={{ page_obj.paginator.num_pages }}&position={{ position }}&my={{ owner }}">last &raquo;</a>
+                        {% endif %}
+                    </span>
+                </div>
+                <br>
+            </div>
+{#            <div class="macro-map clearfix">#}
+{#                <div class="macro-map-info">#}
+{#                    <div class="macro-map-info-detail" style="min-height: 0px"></div>#}
+{#                </div>#}
+{#            </div>#}
+
+        </section>
+
+    </div>
+
+</div>
+<!-- Vendor -->
+<script src="{% static "shaardah_huudas/vendor/jquery/jquery.min.js" %}"></script>
+<script src="{% static "shaardah_huudas/vendor/bootstrap/js/bootstrap.min.js" %}"></script>
+<script type="text/javascript">
+    function deleteShaardah(packageCode, user_id) {
+        console.log(packageCode);
+        $.ajax({
+            url: "/simple/deleteShaardah",
+            method: "GET",
+            data: {
+                packageCode: packageCode,
+                user_id: user_id
+            },
+            success: function (data) {
+                console.log("DATA");
+                console.log(data);
+                html_to_append = '<h3>' + data[0].notification + '</h3><a href="/simple/simpleNiitShaardah?user_id={{ user_id }}&page=1&my=my">\n' +
+                    '<p style="text-align: center">Миний шаардахууд цэс рүү буцах</p></a>';
+                $("#viewData").html(html_to_append);
+            },
+            error: function () {
+                console.log("ERROR");
+            }
+        });
+    }
+</script>
+<!-- Theme Base, Components and Settings -->
+<!--script src="{% static "shaardah_huudas/js/theme.js" %}"></script-->
+<!-- Theme Initialization Files -->
+<!--script src="{% static "shaardah_huudas/js/theme.init.js" %}"></script-->
+</body>
+</html>
